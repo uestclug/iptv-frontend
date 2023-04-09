@@ -1,0 +1,678 @@
+{
+  "Categories": [
+    {
+      "Name": "高清频道",
+      "Hidden": false,
+      "Channels": [
+        {
+          "Name": "CCTV-1高清",
+          "Vid": "cctv1hd"
+        },
+        {
+          "Name": "CCTV-2高清",
+          "Vid": "cctv2hd"
+        },
+        {
+          "Name": "CCTV-3高清",
+          "Vid": "cctv3hd"
+        },
+        {
+          "Name": "CCTV-4高清",
+          "Vid": "cctv4hd"
+        },
+        {
+          "Name": "CCTV-5高清",
+          "Vid": "cctv5hd"
+        },
+        {
+          "Name": "CCTV-5+高清",
+          "Vid": "cctv5phd"
+        },
+        {
+          "Name": "CCTV-6高清",
+          "Vid": "cctv6hd"
+        },
+        {
+          "Name": "CCTV-7高清",
+          "Vid": "cctv7hd"
+        },
+        {
+          "Name": "CCTV-8高清",
+          "Vid": "cctv8hd"
+        },
+        {
+          "Name": "CCTV-9高清",
+          "Vid": "cctv9hd"
+        },
+        {
+          "Name": "CCTV-10高清",
+          "Vid": "cctv10hd"
+        },
+        {
+          "Name": "CCTV-12高清",
+          "Vid": "cctv12hd"
+        },
+        {
+          "Name": "CCTV-13高清",
+          "Vid": "cctv13hd"
+        },
+        {
+          "Name": "CCTV-14高清",
+          "Vid": "cctv14hd"
+        },
+        {
+          "Name": "CCTV-17高清",
+          "Vid": "cctv17hd"
+        },
+        {
+          "Name": "CHC高清电影",
+          "Vid": "chchd"
+        },
+        {
+          "Name": "北京卫视高清",
+          "Vid": "btv1hd"
+        },
+        {
+          "Name": "北京文艺高清",
+          "Vid": "btv2hd"
+        },
+        {
+          "Name": "Kaku少儿高清",
+          "Vid": "btv10hd"
+        },
+        {
+          "Name": "北京冬奥纪实高清",
+          "Vid": "btv11hd"
+        },
+        {
+          "Name": "北京影视高清",
+          "Vid": "btv4hd"
+        },
+        {
+          "Name": "北京新闻高清",
+          "Vid": "btv9hd"
+        },
+        {
+          "Name": "湖南卫视高清",
+          "Vid": "hunanhd"
+        },
+        {
+          "Name": "浙江卫视高清",
+          "Vid": "zjhd"
+        },
+        {
+          "Name": "江苏卫视高清",
+          "Vid": "jshd"
+        },
+        {
+          "Name": "东方卫视高清",
+          "Vid": "dfhd"
+        },
+        {
+          "Name": "安徽卫视高清",
+          "Vid": "ahhd"
+        },
+        {
+          "Name": "黑龙江卫视高清",
+          "Vid": "hljhd"
+        },
+        {
+          "Name": "辽宁卫视高清",
+          "Vid": "lnhd"
+        },
+        {
+          "Name": "深圳卫视高清",
+          "Vid": "szhd"
+        },
+        {
+          "Name": "广东卫视高清",
+          "Vid": "gdhd"
+        },
+        {
+          "Name": "天津卫视高清",
+          "Vid": "tjhd"
+        },
+        {
+          "Name": "湖北卫视高清",
+          "Vid": "hbhd"
+        },
+        {
+          "Name": "山东卫视高清",
+          "Vid": "sdhd"
+        },
+        {
+          "Name": "重庆卫视高清",
+          "Vid": "cqhd"
+        },
+        {
+          "Name": "纪实人文高清",
+          "Vid": "docuchina"
+        },
+        {
+          "Name": "金鹰纪实高清",
+          "Vid": "gedocu"
+        },
+        {
+          "Name": "福建东南卫视高清",
+          "Vid": "dnhd"
+        },
+        {
+          "Name": "四川卫视高清",
+          "Vid": "schd"
+        },
+        {
+          "Name": "河北卫视高清",
+          "Vid": "hebhd"
+        },
+        {
+          "Name": "江西卫视高清",
+          "Vid": "jxhd"
+        },
+        {
+          "Name": "河南卫视高清",
+          "Vid": "hnhd"
+        },
+        {
+          "Name": "广西卫视高清",
+          "Vid": "gxhd"
+        },
+        {
+          "Name": "吉林卫视高清",
+          "Vid": "jlhd"
+        },
+        {
+          "Name": "中国教育电视台1高清",
+          "Vid": "cetv1hd"
+        },
+        {
+          "Name": "海南卫视高清",
+          "Vid": "lyhd"
+        },
+        {
+          "Name": "贵州卫视高清",
+          "Vid": "gzhd"
+        },
+        {
+          "Name": "卡通剧场高清",
+          "Vid": "ktjchd"
+        },
+        {
+          "Name": "大众影视高清",
+          "Vid": "dzyshd"
+        },
+        {
+          "Name": "家庭影院高清",
+          "Vid": "jtyyhd"
+        },
+        {
+          "Name": "家庭剧场高清",
+          "Vid": "jtjchd"
+        },
+        {
+          "Name": "CGTN纪实高清",
+          "Vid": "cgtndochd"
+        },
+        {
+          "Name": "足球频道",
+          "Vid": "zqhd"
+        }
+      ]
+    },
+    {
+      "Name": "特色频道",
+      "Hidden": false,
+      "Channels": [
+        {
+          "Name": "凤凰资讯高清",
+          "Vid": "fhzxhd"
+        },
+        {
+          "Name": "凤凰中文高清",
+          "Vid": "fhzwhd"
+        },
+        {
+          "Name": "凤凰中文",
+          "Vid": "fhzw"
+        },
+        {
+          "Name": "凤凰资讯",
+          "Vid": "fhzx"
+        },
+        {
+          "Name": "凤凰电影",
+          "Vid": "fhdy"
+        },
+        {
+          "Name": "Discovery",
+          "Vid": "discovery"
+        },
+        {
+          "Name": "国家地理",
+          "Vid": "natlgeo"
+        },
+        {
+          "Name": "Channel V",
+          "Vid": "channelv"
+        },
+        {
+          "Name": "星空卫视",
+          "Vid": "startv"
+        },
+        {
+          "Name": "Star Sports",
+          "Vid": "starsports"
+        }
+      ]
+    },
+    {
+      "Name": "央视标清",
+      "Hidden": false,
+      "Channels": [
+        {
+          "Name": "CCTV-1综合",
+          "Vid": "cctv1"
+        },
+        {
+          "Name": "CCTV-2财经",
+          "Vid": "cctv2"
+        },
+        {
+          "Name": "CCTV-3综艺",
+          "Vid": "cctv3"
+        },
+        {
+          "Name": "CCTV-4中文国际",
+          "Vid": "cctv4"
+        },
+        {
+          "Name": "CCTV-5体育",
+          "Vid": "cctv5"
+        },
+        {
+          "Name": "CCTV-6电影",
+          "Vid": "cctv6"
+        },
+        {
+          "Name": "CCTV-7国防军事",
+          "Vid": "cctv7"
+        },
+        {
+          "Name": "CCTV-8电视剧",
+          "Vid": "cctv8"
+        },
+        {
+          "Name": "CCTV-9纪录",
+          "Vid": "cctv9"
+        },
+        {
+          "Name": "CCTV-10科教",
+          "Vid": "cctv10"
+        },
+        {
+          "Name": "CCTV-11戏曲",
+          "Vid": "cctv11"
+        },
+        {
+          "Name": "CCTV-12社会与法",
+          "Vid": "cctv12"
+        },
+        {
+          "Name": "CCTV-13新闻",
+          "Vid": "cctv13"
+        },
+        {
+          "Name": "CCTV-14少儿",
+          "Vid": "cctv14"
+        },
+        {
+          "Name": "CCTV-15音乐",
+          "Vid": "cctv15"
+        },
+        {
+          "Name": "CGTN",
+          "Vid": "cctv16"
+        },
+        {
+          "Name": "CCTV-17农业农村",
+          "Vid": "cctv17"
+        },
+        {
+          "Name": "文化精品",
+          "Vid": "whjptv"
+        },
+        {
+          "Name": "老故事",
+          "Vid": "lgstv"
+        }
+      ]
+    },
+    {
+      "Name": "其他标清",
+      "Hidden": false,
+      "Channels": [
+        {
+          "Name": "北京卫视",
+          "Vid": "btv1"
+        },
+        {
+          "Name": "北京文艺",
+          "Vid": "btv2"
+        },
+        {
+          "Name": "北京科教",
+          "Vid": "btv3"
+        },
+        {
+          "Name": "北京影视",
+          "Vid": "btv4"
+        },
+        {
+          "Name": "北京财经",
+          "Vid": "btv5"
+        },
+        {
+          "Name": "北京生活",
+          "Vid": "btv7"
+        },
+        {
+          "Name": "北京青年",
+          "Vid": "btv8"
+        },
+        {
+          "Name": "北京新闻",
+          "Vid": "btv9"
+        },
+        {
+          "Name": "北京卡酷少儿",
+          "Vid": "btv10"
+        },
+        {
+          "Name": "北京冬奥纪实",
+          "Vid": "btv11"
+        },
+        {
+          "Name": "浙江卫视",
+          "Vid": "zjtv"
+        },
+        {
+          "Name": "湖南卫视",
+          "Vid": "hunantv"
+        },
+        {
+          "Name": "江苏卫视",
+          "Vid": "jstv"
+        },
+        {
+          "Name": "东方卫视",
+          "Vid": "dftv"
+        },
+        {
+          "Name": "深圳卫视",
+          "Vid": "sztv"
+        },
+        {
+          "Name": "安徽卫视",
+          "Vid": "ahtv"
+        },
+        {
+          "Name": "河南卫视",
+          "Vid": "hntv"
+        },
+        {
+          "Name": "陕西卫视",
+          "Vid": "sxtv"
+        },
+        {
+          "Name": "吉林卫视",
+          "Vid": "jltv"
+        },
+        {
+          "Name": "广东卫视",
+          "Vid": "gdtv"
+        },
+        {
+          "Name": "山东卫视",
+          "Vid": "sdtv"
+        },
+        {
+          "Name": "湖北卫视",
+          "Vid": "hbtv"
+        },
+        {
+          "Name": "广西卫视",
+          "Vid": "gxtv"
+        },
+        {
+          "Name": "河北卫视",
+          "Vid": "hebtv"
+        },
+        {
+          "Name": "西藏卫视",
+          "Vid": "xztv"
+        },
+        {
+          "Name": "内蒙古卫视",
+          "Vid": "nmtv"
+        },
+        {
+          "Name": "青海卫视",
+          "Vid": "qhtv"
+        },
+        {
+          "Name": "四川卫视",
+          "Vid": "sctv"
+        },
+        {
+          "Name": "天津卫视",
+          "Vid": "tjtv"
+        },
+        {
+          "Name": "山西卫视",
+          "Vid": "sxrtv"
+        },
+        {
+          "Name": "辽宁卫视",
+          "Vid": "lntv"
+        },
+        {
+          "Name": "厦门卫视",
+          "Vid": "xmtv"
+        },
+        {
+          "Name": "新疆卫视",
+          "Vid": "xjtv"
+        },
+        {
+          "Name": "黑龙江卫视",
+          "Vid": "hljtv"
+        },
+        {
+          "Name": "云南卫视",
+          "Vid": "yntv"
+        },
+        {
+          "Name": "江西卫视",
+          "Vid": "jxtv"
+        },
+        {
+          "Name": "福建东南卫视",
+          "Vid": "dntv"
+        },
+        {
+          "Name": "贵州卫视",
+          "Vid": "gztv"
+        },
+        {
+          "Name": "宁夏卫视",
+          "Vid": "nxtv"
+        },
+        {
+          "Name": "甘肃卫视",
+          "Vid": "gstv"
+        },
+        {
+          "Name": "重庆卫视",
+          "Vid": "cqtv"
+        },
+        {
+          "Name": "兵团卫视",
+          "Vid": "bttv"
+        },
+        {
+          "Name": "延边卫视",
+          "Vid": "ybtv"
+        },
+        {
+          "Name": "三沙卫视",
+          "Vid": "sstv"
+        },
+        {
+          "Name": "海南卫视",
+          "Vid": "lytv"
+        },
+        {
+          "Name": "CHC家庭影院",
+          "Vid": "chctv"
+        },
+        {
+          "Name": "CHC动作电影",
+          "Vid": "chcatv"
+        },
+        {
+          "Name": "金鹰卡通",
+          "Vid": "jykttv"
+        },
+        {
+          "Name": "优漫卡通",
+          "Vid": "ymkttv"
+        },
+        {
+          "Name": "新动漫",
+          "Vid": "xdmtv"
+        },
+        {
+          "Name": "探案剧场",
+          "Vid": "tajctv"
+        },
+        {
+          "Name": "辽宁影视剧",
+          "Vid": "lnysjtv"
+        },
+        {
+          "Name": "辽宁体育",
+          "Vid": "lntytv"
+        },
+        {
+          "Name": "中国教育电视台1",
+          "Vid": "cetv1"
+        },
+        {
+          "Name": "中国教育电视台3",
+          "Vid": "cetv3"
+        },
+        {
+          "Name": "中国教育电视台4",
+          "Vid": "cetv4"
+        },
+        {
+          "Name": "山东教育电视台",
+          "Vid": "sdetv"
+        }
+      ]
+    },
+    {
+      "Name": "广播",
+      "Hidden": false,
+      "Channels": [
+        {
+          "Name": "央广中国之声",
+          "Vid": "cnrzgzsgb"
+        },
+        {
+          "Name": "央广经济之声",
+          "Vid": "cnrjjzsgb"
+        },
+        {
+          "Name": "央广音乐之声",
+          "Vid": "cnryyzsgb"
+        },
+        {
+          "Name": "央广都市之声",
+          "Vid": "cnrdszsgb"
+        },
+        {
+          "Name": "央广文艺之声",
+          "Vid": "cnrwyzsgb"
+        },
+        {
+          "Name": "央广娱乐广播",
+          "Vid": "cnrylgb"
+        },
+        {
+          "Name": "央广交通广播",
+          "Vid": "cnrjtgb"
+        },
+        {
+          "Name": "央广香港广播",
+          "Vid": "cnrxgzsgb"
+        },
+        {
+          "Name": "北京新闻",
+          "Vid": "bjxwgb"
+        },
+        {
+          "Name": "北京故事广播",
+          "Vid": "bjgsgb"
+        },
+        {
+          "Name": "北京文艺广播",
+          "Vid": "bjwygb"
+        },
+        {
+          "Name": "北京城市",
+          "Vid": "bjcsgb"
+        },
+        {
+          "Name": "北京体育",
+          "Vid": "bjtygb"
+        },
+        {
+          "Name": "北京交通",
+          "Vid": "bjjtgb"
+        },
+        {
+          "Name": "北京音乐",
+          "Vid": "bjyygb"
+        },
+        {
+          "Name": "北京古典音乐",
+          "Vid": "bjgdyygb"
+        },
+        {
+          "Name": "北京外语",
+          "Vid": "bjwaiyugb"
+        },
+        {
+          "Name": "北京教学",
+          "Vid": "bjjxgb"
+        },
+        {
+          "Name": "北京长书",
+          "Vid": "bjchangshugb"
+        },
+        {
+          "Name": "北京戏曲",
+          "Vid": "bjxqgb"
+        },
+        {
+          "Name": "北京欢乐时光",
+          "Vid": "bjhlsggb"
+        },
+        {
+          "Name": "北京怀旧金曲",
+          "Vid": "bjhjjqgb"
+        }
+      ]
+    }
+  ]
+}
