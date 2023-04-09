@@ -4,6 +4,7 @@
 
 - [ ] Chromecast support: Wait [upstream](https://github.com/silvermine/videojs-chromecast) for videojs 8.
 - [ ] Airplay support: Wait [upstream](https://github.com/silvermine/videojs-airplay) for videojs 8.
+- [ ] Service worker
 
 ## Deploy
 
