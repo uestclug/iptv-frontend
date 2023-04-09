@@ -6,27 +6,30 @@
 </template>
 
 <script setup>
+import { useRoute, useRouter } from "vue-router";
 import { useKeypress } from "vue3-keypress";
+import { channelStore } from "@/store/channel";
+import { profileStore } from "@/store/profile";
 import VideoPlayer from "@/components/play/VideoPlayer.vue";
 
+const route = useRoute();
+const router = useRouter();
 const videoEndpoint = import.meta.env.VITE_VIDEO_ENDPOINT;
 
 const snapshotEndpoint = import.meta.env.VITE_SNAPSHOT_ENDPOINT;
 
-const nextChannel = ({ keyCode }) => {
-  console.log(keyCode);
+const incVolume = profileStore().incVolume;
+
+const getNextChannel = channelStore().getNextChannel;
+
+const toggleMute = profileStore().toggleMute;
+
+const nextChannel = () => {
+  router.push("/play/" + getNextChannel(route.params.vid));
 };
 
-const prevChannel = ({ keyCode }) => {
-  console.log(keyCode);
-};
-
-const downVolume = ({ keyCode }) => {
-  console.log(keyCode);
-};
-
-const upVolume = ({ keyCode }) => {
-  console.log(keyCode);
+const prevChannel = () => {
+  router.push("/play/" + getNextChannel(route.params.vid, true));
 };
 
 useKeypress({
@@ -34,22 +37,34 @@ useKeypress({
   keyBinds: [
     {
       keyCode: "down",
-      success: nextChannel,
+      success: prevChannel,
+    },
+    // {
+    //   keyCode: "esc",
+    //   success: router.push("/"),
+    // },
+    {
+      keyCode: 77, // m
+      success: () => {
+        toggleMute();
+      },
     },
     {
       keyCode: "up",
-      success: prevChannel,
+      success: nextChannel,
     },
     {
       keyCode: "left",
-      success: downVolume,
+      success: () => {
+        incVolume(true);
+      },
     },
     {
       keyCode: "right",
-      success: upVolume,
+      success: () => {
+        incVolume();
+      },
     },
   ],
 });
 </script>
-
-<style></style>

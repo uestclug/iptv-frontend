@@ -3,6 +3,8 @@
     @mounted="player"
     @fullscreenchange="onfullscreen"
     @error="onError"
+    :muted="profileState.mute"
+    :volume="profileState.volume"
     liveui
     language="zh-CN"
     :src="src"
@@ -39,6 +41,7 @@
 import { defineComponent } from "vue";
 import { VideoPlayer } from "@videojs-player/vue";
 import { playerStore } from "@/store/player";
+import { profileStore } from "@/store/profile";
 import "video.js/dist/video-js.css";
 export default defineComponent({
   components: {
@@ -48,7 +51,13 @@ export default defineComponent({
     playerObj: null,
     playerState: playerStore(),
     error_popup: false,
+    profileState: profileStore(),
   }),
+  watch: {
+    src() {
+      this.error_popup = false;
+    },
+  },
   methods: {
     player(attr) {
       this.playerObj = attr;

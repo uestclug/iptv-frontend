@@ -18,23 +18,36 @@
           ></v-btn>
           <span class="mx-2 hidden-md-and-down"> | </span
           >{{ getChannel($route.params.vid).Name }}
-          <v-btn
-            :icon="
-              isFavorite($route.params.vid) ? 'mdi-star' : 'mdi-star-outline'
-            "
-            @click="
-              isFavorite($route.params.vid)
-                ? unsetFavorite($route.params.vid)
-                : setFavorite($route.params.vid)
-            "
-            variant="plain"
-          ></v-btn>
-          <v-btn
-            icon="mdi-playlist-play"
-            class="hidden-xs"
-            @click="$router.push('/')"
-            variant="plain"
-          ></v-btn>
+          <v-tooltip text="收藏" location="bottom">
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                :icon="
+                  isFavorite($route.params.vid)
+                    ? 'mdi-star'
+                    : 'mdi-star-outline'
+                "
+                @click="
+                  isFavorite($route.params.vid)
+                    ? unsetFavorite($route.params.vid)
+                    : setFavorite($route.params.vid)
+                "
+                variant="plain"
+              ></v-btn>
+            </template>
+          </v-tooltip>
+
+          <v-tooltip text="返回播放列表" location="bottom">
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                icon="mdi-playlist-play"
+                class="hidden-xs"
+                @click="$router.push('/')"
+                variant="plain"
+              ></v-btn>
+            </template>
+          </v-tooltip>
         </template>
       </v-app-bar-title>
       <v-app-bar-title style="flex: none" v-else>
@@ -45,11 +58,16 @@
 
       <SearchBarWrap />
       <div :class="$route.name === 'play' ? 'hidden-xs' : ''">
-        <v-btn
-          icon="mdi-theme-light-dark"
-          @click="toggleTheme"
-          variant="plain"
-        ></v-btn>
+        <v-tooltip text="切换主题" location="bottom">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              v-bind="props"
+              icon="mdi-theme-light-dark"
+              @click="toggleTheme"
+              variant="plain"
+            ></v-btn>
+          </template>
+        </v-tooltip>
         <v-btn
           v-if="$route.name === 'home'"
           :icon="
@@ -60,7 +78,7 @@
           @click="toggleCompact"
           variant="plain"
         ></v-btn>
-
+        <KeyboardHelp v-if="$route.name === 'play'" />
         <DownloadPlaylist />
       </div>
     </v-container>
@@ -98,9 +116,10 @@ import { playerStore } from "@/store/player";
 import SearchBarWrap from "./SearchBarWrap.vue";
 import DownloadPlaylist from "./DownloadPlaylist.vue";
 import { useDisplay } from "vuetify";
+import KeyboardHelp from "./KeyboardHelp.vue";
 
 export default {
-  components: { SearchBarWrap, DownloadPlaylist },
+  components: { SearchBarWrap, DownloadPlaylist, KeyboardHelp },
   setup() {
     const theme = useTheme();
     const { mdAndUp } = useDisplay();
@@ -127,8 +146,6 @@ export default {
   computed: {
     slideIdx() {
       if (!this.playerState.selectedCat) return -1;
-      //return 0;
-      //console.log(this.categoryList.findIndex)
       return this.categoryList().findIndex(
         (v) => v == this.playerState.selectedCat
       );

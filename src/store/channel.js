@@ -32,6 +32,17 @@ export const channelStore = defineStore("channel", {
         for (let ch of cat.Channels) if (ch.Vid === vid) return ch;
       return { Name: "未知频道", Vid: "unknown" };
     },
+    getNextChannel(vid, rev = false) {
+      const channelList = this.getChannelList();
+      const currIdx = channelList.findIndex((c) => c.Vid == vid);
+      if (currIdx >= 0)
+        if (rev ? currIdx - 1 < 0 : currIdx + 1 >= channelList.length)
+          return rev
+            ? channelList[channelList.length - 1].Vid
+            : channelList[0].Vid;
+        else return channelList[rev ? currIdx - 1 : currIdx + 1].Vid;
+      else return channelList[0].Vid;
+    },
     getPlaylistFile() {
       var str = "#EXTM3U\n";
       for (const cat of this.channels.Categories)
