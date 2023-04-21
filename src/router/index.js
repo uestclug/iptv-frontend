@@ -8,6 +8,7 @@ const routes = [
   },
   {
     path: "/play/:vid",
+    alias: "/play/:cid/:vid",
     name: "play",
     component: () => import("@/views/PlayView.vue"),
   },

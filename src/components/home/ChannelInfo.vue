@@ -9,14 +9,25 @@
           class="align-center justify-center"
         >
           <v-card-title class="text-white">
-            <v-icon class="ml-0" start size="large" icon="mdi-play" color="white" />
+            <v-icon
+              class="ml-0"
+              start
+              size="large"
+              icon="mdi-play"
+              color="white"
+            />
             点击播放</v-card-title
           >
         </v-overlay>
         <v-img
           aspect-ratio="1.7778"
           cover
-          :src="snapshotEndpoint + ch.Vid + '.jpg'"
+          :src="
+            snapshotEndpoint +
+            ('Cid' in ch ? ch.Cid + '/' : '') +
+            ch.Vid +
+            '.jpg'
+          "
         >
           <template v-slot:error>
             <v-sheet color="grey" height="100%">
@@ -72,7 +83,9 @@ export default {
   }),
   methods: {
     watch() {
-      this.$router.push("/play/" + this.ch.Vid);
+      this.$router.push(
+        "/play/" + ("Cid" in this.ch ? this.ch.Cid + "/" : "") + this.ch.Vid
+      );
     },
   },
 };

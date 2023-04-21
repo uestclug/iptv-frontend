@@ -12,7 +12,7 @@
   >
     <template v-slot:item="{ props, item }">
       <v-list-item
-        @click="watch(item?.raw?.Vid)"
+        @click="watch(item?.raw)"
         v-bind="props"
         :title="item?.raw?.Name"
         :subtitle="item?.raw?.Vid"
@@ -26,14 +26,15 @@ import { channelStore } from "@/store/channel";
 export default {
   props: ["mobile"],
   methods: {
-    watch(vid) {
+    watch(ch) {
       this.channel = null;
-      this.$router.push("/play/" + vid);
+      this.$router.push("/play/" + this.getChannelLink(ch.Vid));
     },
   },
   data: () => ({
     channel: null,
     getChannels: channelStore().getChannelList,
+    getChannelLink: channelStore().getChannelLink,
   }),
 };
 </script>

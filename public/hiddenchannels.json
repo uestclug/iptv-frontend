@@ -1,0 +1,15 @@
+{
+  "Categories": [
+    {
+      "Name": "校园直播",
+      "Hidden": true,
+      "Channels": [
+        {
+          "Name": "测试频道",
+          "Vid": "114514",
+          "Cid": "uestclug"
+        }
+      ]
+    }
+  ]
+}

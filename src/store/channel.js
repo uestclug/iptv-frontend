@@ -32,6 +32,15 @@ export const channelStore = defineStore("channel", {
         for (let ch of cat.Channels) if (ch.Vid === vid) return ch;
       return { Name: "未知频道", Vid: "unknown" };
     },
+    getChannelLink(vid) {
+      for (let cat of this.channels.Categories)
+        for (let ch of cat.Channels)
+          if (ch.Vid === vid) {
+            if ("Cid" in ch) return ch.Cid + "/" + ch.Vid;
+            else return ch.Vid;
+          }
+      return "unknown";
+    },
     getNextChannel(vid, rev = false) {
       const channelList = this.getChannelList();
       const currIdx = channelList.findIndex((c) => c.Vid == vid);
