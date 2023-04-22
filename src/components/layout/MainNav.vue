@@ -1,24 +1,25 @@
 <template>
-  <v-app-bar
-    :extension-height="mdAndUp || $route.name === 'play' ? 0 : 48"
-    flat
-  >
+  <v-app-bar :extension-height="mdAndUp || isVideoPage ? 0 : 48" flat>
     <v-container class="d-flex align-center">
       <v-avatar class="hidden-xs mx-4" rounded="0" size="32">
         <v-img src="/icons/icon.svg" />
       </v-avatar>
-      <v-app-bar-title style="flex: none" v-if="$route.name === 'play'">
+      <v-app-bar-title style="flex: none" v-if="isVideoPage">
         <b class="hidden-md-and-down">IPTV @ UESTC</b>
-        <template v-if="$route.name === 'play'">
+        <template v-if="isVideoPage">
           <v-btn
             icon="mdi-arrow-left"
             class="hidden-sm-and-up"
             @click="$router.push('/')"
             variant="plain"
           ></v-btn>
-          <span class="mx-2 hidden-md-and-down"> | </span
-          >{{ getChannel($route.params.vid).Name }}
-          <v-tooltip text="收藏" location="bottom">
+          <span class="mx-2 hidden-md-and-down"> | </span>
+          {{
+            isPlayPage
+              ? getChannel($route.params.vid).Name
+              : getLive($route.params.cid, $route.params.vid).Name
+          }}
+          <v-tooltip text="收藏" location="bottom" v-if="isPlayPage">
             <template v-slot:activator="{ props }">
               <v-btn
                 v-bind="props"
@@ -57,7 +58,7 @@
       <v-spacer />
 
       <SearchBarWrap />
-      <div :class="$route.name === 'play' ? 'hidden-xs' : ''">
+      <div :class="isVideoPage ? 'hidden-xs' : ''">
         <v-tooltip text="切换主题" location="bottom">
           <template v-slot:activator="{ props }">
             <v-btn
@@ -78,8 +79,8 @@
           @click="toggleCompact"
           variant="plain"
         ></v-btn>
-        <KeyboardHelp v-if="$route.name === 'play'" />
-        <DownloadPlaylist />
+        <KeyboardHelp v-if="isVideoPage" />
+        <DownloadPlaylist v-if="isPlayPage" />
       </div>
     </v-container>
     <template v-slot:extension v-if="$route.name === 'home'">
@@ -117,6 +118,7 @@ import SearchBarWrap from "./SearchBarWrap.vue";
 import DownloadPlaylist from "./DownloadPlaylist.vue";
 import { useDisplay } from "vuetify";
 import KeyboardHelp from "./KeyboardHelp.vue";
+import { liveStore } from "@/store/live";
 
 export default {
   components: { SearchBarWrap, DownloadPlaylist, KeyboardHelp },
@@ -127,6 +129,7 @@ export default {
     if (profileStore().favorites.length) catList.unshift("收藏夹");
     return {
       getChannel: channelStore().getChannel,
+      getLive: liveStore().getLive,
       categoryList: channelStore().getCategoryList,
       isFavorite: profileStore().isFavorite,
       setFavorite: profileStore().setFavorite,
@@ -144,6 +147,15 @@ export default {
     };
   },
   computed: {
+    isVideoPage() {
+      return this.$route.name === "play" || this.$route.name === "live";
+    },
+    isLivePage() {
+      return this.$route.name === "live";
+    },
+    isPlayPage() {
+      return this.$route.name === "play";
+    },
     slideIdx() {
       if (!this.playerState.selectedCat) return -1;
       return this.categoryList().findIndex(

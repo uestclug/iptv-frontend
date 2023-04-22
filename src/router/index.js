@@ -8,9 +8,13 @@ const routes = [
   },
   {
     path: "/play/:vid",
-    alias: "/play/:cid/:vid",
     name: "play",
     component: () => import("@/views/PlayView.vue"),
+  },
+  {
+    path: "/live/:cid/:vid",
+    name: "live",
+    component: () => import("@/views/LiveView.vue"),
   },
   {
     path: "/error/:code",

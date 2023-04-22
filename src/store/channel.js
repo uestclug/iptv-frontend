@@ -36,8 +36,7 @@ export const channelStore = defineStore("channel", {
       for (let cat of this.channels.Categories)
         for (let ch of cat.Channels)
           if (ch.Vid === vid) {
-            if ("Cid" in ch) return ch.Cid + "/" + ch.Vid;
-            else return ch.Vid;
+            return ch.Vid;
           }
       return "unknown";
     },

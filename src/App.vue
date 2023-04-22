@@ -31,8 +31,10 @@ import { useTheme } from "vuetify";
 import { profileStore } from "@/store/profile";
 import { playerStore } from "@/store/player";
 import { channelStore } from "./store/channel";
+import { liveStore } from "./store/live";
 const theme = useTheme();
 channelStore().fetchChannels();
+liveStore().fetchLives();
 if (profileStore().$state.dark)
   theme.global.name.value = profileStore().$state.dark;
 const player = playerStore();

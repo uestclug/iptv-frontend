@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="k in keys" :key="k.keyname">
+            <tr v-for="k in keys[$route.name]" :key="k.keyname">
               <td>
                 <code>{{ k.keyname }}</code>
               </td>
@@ -31,20 +31,32 @@
 </template>
 
 <script setup>
-const keys = [
-  {
-    keyname: "方向键上/下",
-    funct: "切换频道",
-  },
-  {
-    keyname: "方向键左/右",
-    funct: "调整音量",
-  },
-  {
-    keyname: "m",
-    funct: "静音",
-  },
-];
+const keys = {
+  live: [
+    {
+      keyname: "方向键左/右",
+      funct: "调整音量",
+    },
+    {
+      keyname: "m",
+      funct: "静音",
+    },
+  ],
+  play: [
+    {
+      keyname: "方向键上/下",
+      funct: "切换频道",
+    },
+    {
+      keyname: "方向键左/右",
+      funct: "调整音量",
+    },
+    {
+      keyname: "m",
+      funct: "静音",
+    },
+  ],
+};
 </script>
 
 <style></style>

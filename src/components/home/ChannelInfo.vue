@@ -22,12 +22,7 @@
         <v-img
           aspect-ratio="1.7778"
           cover
-          :src="
-            snapshotEndpoint +
-            ('Cid' in ch ? ch.Cid + '/' : '') +
-            ch.Vid +
-            '.jpg'
-          "
+          :src="snapshotEndpoint + ch.Vid + '.jpg'"
         >
           <template v-slot:error>
             <v-sheet color="grey" height="100%">
@@ -83,9 +78,7 @@ export default {
   }),
   methods: {
     watch() {
-      this.$router.push(
-        "/play/" + ("Cid" in this.ch ? this.ch.Cid + "/" : "") + this.ch.Vid
-      );
+      this.$router.push("/play/" + this.ch.Vid);
     },
   },
 };

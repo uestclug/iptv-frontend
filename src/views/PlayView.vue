@@ -1,17 +1,7 @@
 <template>
   <VideoPlayer
-    :src="
-      videoEndpoint +
-      ($route.params.cid
-        ? $route.params.cid + '/' + $route.params.vid + '.m3u8'
-        : $route.params.vid + '/index.m3u8')
-    "
-    :presrc="
-      snapshotEndpoint +
-      ($route.params.cid
-        ? $route.params.cid + '/' + $route.params.vid + '.jpg'
-        : $route.params.vid + '.jpg')
-    "
+    :src="videoEndpoint + $route.params.vid + '/index.m3u8'"
+    :presrc="snapshotEndpoint + $route.params.vid + '.jpg'"
   />
 </template>
 
