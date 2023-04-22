@@ -3,10 +3,10 @@
     hide-details
     v-model="channel"
     :items="getChannels()"
+    return-object
     prepend-inner-icon="mdi-magnify"
     :density="mobile ? 'comfortable' : 'compact'"
     item-title="Name"
-    item-value="Vid"
     @update:model-value="watch"
     label="搜索..."
   >
