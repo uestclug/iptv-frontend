@@ -22,6 +22,25 @@ export const adminStore = defineStore("admin", {
       if (this.token) return jwt_decode(this.token);
       else return null;
     },
+    async fetchData(url, method = "GET", body = null) {
+      let fetch_config = {
+        method: method,
+        headers: {
+          Authorization: `Bearer ${this.token}`,
+        },
+      };
+      if (body) {
+        fetch_config.body = JSON.stringify(body);
+        fetch_config.headers["Content-type"] =
+          "application/json; charset=UTF-8";
+      }
+      if (this.token)
+        return await fetch(
+          import.meta.env.VITE_LIVE_API_ENDPOINT + url,
+          fetch_config
+        );
+      else return null;
+    },
   },
   persist: {
     enabled: true,

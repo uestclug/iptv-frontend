@@ -13,11 +13,8 @@ export default {
     channels: [],
   }),
   mounted() {
-    fetch(import.meta.env.VITE_LIVE_API_ENDPOINT + "admin/list", {
-      headers: {
-        Authorization: `Bearer ${adminStore().token}`,
-      },
-    })
+    adminStore()
+      .fetchData("admin/list")
       .then((res) => {
         return res.json();
       })
