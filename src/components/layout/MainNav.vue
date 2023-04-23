@@ -104,6 +104,20 @@
             {{ n }}
           </v-btn>
         </v-slide-group-item>
+        <v-slide-group-item
+          v-for="n in liveCategoryList()"
+          :key="n"
+          v-slot="{ isSelected }"
+        >
+          <v-btn
+            class="ma-2"
+            rounded
+            :color="isSelected ? 'primary' : undefined"
+            v-scroll-to="{ el: '#playlist-' + n, offset: -114 }"
+          >
+            {{ n }}
+          </v-btn>
+        </v-slide-group-item>
       </v-slide-group>
     </template>
   </v-app-bar>
@@ -131,6 +145,7 @@ export default {
       getChannel: channelStore().getChannel,
       getLive: liveStore().getLive,
       categoryList: channelStore().getCategoryList,
+      liveCategoryList: liveStore().getCategoryList,
       isFavorite: profileStore().isFavorite,
       setFavorite: profileStore().setFavorite,
       getCompact: profileStore().getCompact,

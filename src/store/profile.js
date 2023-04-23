@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import jwt_decode from "jwt-decode";
 
 export const profileStore = defineStore("profile", {
   state: () => ({
@@ -7,8 +8,20 @@ export const profileStore = defineStore("profile", {
     favorites: [],
     volume: 1,
     mute: false,
+    token: null,
   }),
   actions: {
+    isLogin() {
+      return !!this.token;
+    },
+    login() {
+      window.location.href =
+        import.meta.env.VITE_LIVE_API_ENDPOINT + "redirect/user";
+    },
+    getUserInfo() {
+      if (this.token) return jwt_decode(this.token);
+      else return null;
+    },
     toggleCompact() {
       this.compact = !this.compact;
     },

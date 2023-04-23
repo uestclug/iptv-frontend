@@ -3,6 +3,7 @@
     <v-row>
       <v-col cols="12" sm="12" md="4" lg="4" xl="3" xxl="2">
         <div style="position: sticky; top: 88px">
+          <UserProfile v-if="isLogin()" />
           <SiteMotd />
           <ChannelNav class="hidden-sm-and-down" />
           <MainFooter class="hidden-sm-and-down" />
@@ -23,4 +24,7 @@ import ChannelNav from "@/components/home/ChannelNav.vue";
 import ChannelPreviewGrid from "@/components/home/ChannelPreviewGrid.vue";
 import MainFooter from "@/components/home/MainFooter.vue";
 import SiteMotd from "@/components/home/SiteMotd.vue";
+import UserProfile from "@/components/home/UserProfile.vue";
+import { profileStore } from "@/store/profile";
+const isLogin = profileStore().isLogin;
 </script>

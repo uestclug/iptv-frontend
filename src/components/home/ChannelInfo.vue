@@ -72,13 +72,15 @@ export default {
       snapshotEndpoint: import.meta.env.VITE_SNAPSHOT_ENDPOINT,
     };
   },
-  props: ["ch"],
+  props: ["ch", "cid"],
   data: () => ({
     overlay: false,
   }),
   methods: {
     watch() {
-      this.$router.push("/play/" + this.ch.Vid);
+      if (this.cid) {
+        this.$router.push("/live/" + this.cid + "/" + this.ch.Vid);
+      } else this.$router.push("/play/" + this.ch.Vid);
     },
   },
 };

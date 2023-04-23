@@ -1,9 +1,8 @@
 <template>
   <v-row>
     <ChannelPreviewGroup
-      v-if="favoriteChannels.length"
-      :chs="favoriteChannels"
-      cat="收藏夹"
+      v-if="favoriteChannels.Channels.length"
+      :cat="favoriteChannels"
     />
     <v-col v-if="!channels.Categories.length">
       <v-alert
@@ -18,15 +17,23 @@
     <ChannelPreviewGroup
       v-for="cat in channels.Categories"
       :key="cat.Name"
-      :chs="cat.Channels"
-      :cat="cat.Name"
+      :cat="cat"
+    />
+    <ChannelPreviewGroup
+      v-for="cat in lives.Categories"
+      :key="cat.Name"
+      :cat="cat"
     />
   </v-row>
 </template>
 
 <script setup>
+import { storeToRefs } from "pinia";
 import { channelStore } from "@/store/channel";
+import { liveStore } from "@/store/live";
 import ChannelPreviewGroup from "./ChannelPreviewGroup.vue";
-const channels = channelStore().$state.channels;
+
+const { channels: channels } = storeToRefs(channelStore());
+const { channels: lives } = storeToRefs(liveStore());
 const favoriteChannels = channelStore().getFavoriteChannels();
 </script>

@@ -14,7 +14,11 @@ export const channelStore = defineStore("channel", {
       const favoriteChannelIDs = profile.favorites;
       let ret = [];
       for (const vid of favoriteChannelIDs) ret.push(this.getChannel(vid));
-      return ret;
+      return {
+        Name: "收藏夹",
+        Hidden: false,
+        Channels: ret,
+      };
     },
     getCategoryList() {
       let ret = [];
