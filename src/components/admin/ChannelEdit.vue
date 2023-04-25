@@ -21,21 +21,19 @@
         class="my-1"
         density="compact"
         readonly
-        label="串流名称"
+        label="串流地址"
         hide-details
-        :model-value="ch.id"
+        model-value="rtmp://server/live"
         type="text"
       >
       </v-text-field>
       <v-text-field
         class="my-1"
         density="compact"
-        label="串流地址"
+        label="串流密钥"
         readonly
         hide-details
-        :model-value="
-          'rtmp://server/live?token=' + (showToken ? ch.token : '[REDACTED]')
-        "
+        :model-value="showToken ? ch.id + '?token=' + ch.token : '[REDACTED]'"
         :append-icon="showToken ? 'mdi-eye-off' : 'mdi-eye'"
         type="text"
         @click:append="showToken = !showToken"
